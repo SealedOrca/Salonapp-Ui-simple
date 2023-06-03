@@ -5,13 +5,11 @@ class GlamourSalonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Glamour Salon & Spa'),
+        title: const Text('Glamour Salon & Spa'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Glamour Salon & Spa Page'),
       ),
     );
   }
 }
-
-

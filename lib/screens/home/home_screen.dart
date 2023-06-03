@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:rive_animation/screens/home/chic.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -123,13 +122,11 @@ final List<Course> courses = [
     color: const Color(0xFF80A4FF),
     backgroundImage: 'assets/card/ap2.jpeg',
   ),
-  
   Course(
     title: "The Beauty Bar.",
     color: const Color(0xFF80A4FF),
     backgroundImage: 'assets/card/ap3.jpeg',
   ),
-  
   Course(
     title: "Chic & Classy Salon.",
     color: const Color(0xFF80A4FF),
@@ -191,7 +188,7 @@ class CourseCard extends StatelessWidget {
           case 'Chic & Classy Salon.':
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SalonApp()),
+              MaterialPageRoute(builder: (context) => const ChicClassyPage()),
             );
             break;
           case 'The Beauty Bar.':
@@ -249,12 +246,12 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Swiper(
-              itemCount: courses.length,
-              itemBuilder: (BuildContext context, int index) {
-                final course = courses[index];
+            child: CarouselSlider(
+              items: courses.map((course) {
                 return GestureDetector(
                   onTap: () {
+                    // Get the index of the course card tapped
+                    final index = courses.indexOf(course);
                     _navigateToPage(context, index);
                   },
                   child: Container(
@@ -299,10 +296,19 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 );
-              },
-              viewportFraction: 0.8,
-              scale: 0.9,
-              pagination: SwiperPagination(),
+              }).toList(),
+              options: CarouselOptions(
+                viewportFraction: 0.8,
+                aspectRatio: 16 / 9,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: false,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                scrollDirection: Axis.horizontal,
+              ),
             ),
           ),
         ],
@@ -341,4 +347,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-

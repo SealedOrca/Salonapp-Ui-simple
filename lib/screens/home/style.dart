@@ -5,9 +5,9 @@ class StyleStudioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Style Studio'),
+        title: const Text('Style Studio'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Style Studio Page'),
       ),
     );

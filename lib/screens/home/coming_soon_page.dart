@@ -37,7 +37,7 @@ class _ComingSoonPageState extends State<ComingSoonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Coming Soon'),
+        title: const Text('Coming Soon'),
       ),
       body: Center(
         child: _artboard != null
@@ -45,7 +45,7 @@ class _ComingSoonPageState extends State<ComingSoonPage> {
                 artboard: _artboard!,
                 fit: BoxFit.cover,
               )
-            : CircularProgressIndicator(),
+            : const CircularProgressIndicator(),
       ),
     );
   }

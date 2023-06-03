@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'rive_model.dart';
 
 class Menu {

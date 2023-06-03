@@ -5,12 +5,11 @@ class TheHairloungePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('The Hair Lounge'),
+        title: const Text('The Hair Lounge'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('The Hair Lounge Page'),
       ),
     );
   }
 }
-

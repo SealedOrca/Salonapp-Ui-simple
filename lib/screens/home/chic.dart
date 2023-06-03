@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'shopping_cart_page.dart';
 
 class Service {
   final String name;
@@ -13,7 +12,8 @@ class Product {
   final double price;
   final String backgroundImage;
 
-  Product({required this.name, required this.price, required this.backgroundImage});
+  Product(
+      {required this.name, required this.price, required this.backgroundImage});
 }
 
 class SalonInfo {
@@ -34,7 +34,8 @@ final salonInfo = SalonInfo(
   name: 'Salon',
   profession: 'Stylist',
   phone: '+1 123-456-7890',
-  about: 'Welcome to Chic and Cassy Salon! We are dedicated to providing exceptional salon services and creating a memorable experience for our clients. With our team of highly skilled and passionate stylists, we strive to bring out your unique beauty and enhance your confidence.',
+  about:
+      'Welcome to Chic and Cassy Salon! We are dedicated to providing exceptional salon services and creating a memorable experience for our clients. With our team of highly skilled and passionate stylists, we strive to bring out your unique beauty and enhance your confidence.',
 );
 
 final services = [
@@ -45,9 +46,18 @@ final services = [
 ];
 
 final products = [
-  Product(name: 'Shampoo', price: 15, backgroundImage: 'assets/products/shampoo.png'),
-  Product(name: 'Conditioner', price: 15, backgroundImage: 'assets/products/conditioner.jpeg'),
-  Product(name: 'Hair Spray', price: 10, backgroundImage: 'assets/products/hairspray.jpg'),
+  Product(
+      name: 'Shampoo',
+      price: 15,
+      backgroundImage: 'assets/products/shampoo.png'),
+  Product(
+      name: 'Conditioner',
+      price: 15,
+      backgroundImage: 'assets/products/conditioner.jpeg'),
+  Product(
+      name: 'Hair Spray',
+      price: 10,
+      backgroundImage: 'assets/products/hairspray.jpg'),
 ];
 
 final onDemandServices = [
@@ -60,7 +70,8 @@ class SalonApp extends StatefulWidget {
   _SalonAppState createState() => _SalonAppState();
 }
 
-class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin {
+class _SalonAppState extends State<SalonApp>
+    with SingleTickerProviderStateMixin {
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
   late AnimationController _controller;
@@ -214,7 +225,8 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
         return AnimatedBuilder(
           animation: _animation,
           builder: (context, child) {
-            final scale = 1.0 + (_animation.value - index).clamp(0.0, 1.0) * 0.3;
+            final scale =
+                1.0 + (_animation.value - index).clamp(0.0, 1.0) * 0.3;
             return Transform.scale(
               scale: scale,
               child: buildServiceCard(service),
@@ -239,7 +251,8 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
         return AnimatedBuilder(
           animation: _animation,
           builder: (context, child) {
-            final scale = 1.0 + (_animation.value - index).clamp(0.0, 1.0) * 0.3;
+            final scale =
+                1.0 + (_animation.value - index).clamp(0.0, 1.0) * 0.3;
             return Transform.scale(
               scale: scale,
               child: buildProductCard(product),
@@ -260,7 +273,8 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
         return AnimatedBuilder(
           animation: _animation,
           builder: (context, child) {
-            final scale = 1.0 + (_animation.value - index).clamp(0.0, 1.0) * 0.3;
+            final scale =
+                1.0 + (_animation.value - index).clamp(0.0, 1.0) * 0.3;
             return Transform.scale(
               scale: scale,
               child: buildServiceCard(onDemandService),
@@ -298,7 +312,7 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Container(
+      child: SizedBox(
         width: 150,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -317,7 +331,8 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
                 children: [
                   Text(
                     product.name,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -353,9 +368,9 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
           },
         ),
         const SizedBox(width: 8),
-        Text(
+        const Text(
           'Selected date:',
-          style: const TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: 16),
         ),
         const SizedBox(width: 8),
         Text(
@@ -370,9 +385,9 @@ class _SalonAppState extends State<SalonApp> with SingleTickerProviderStateMixin
           },
         ),
         const SizedBox(width: 8),
-        Text(
+        const Text(
           'Selected time:',
-          style: const TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: 16),
         ),
         const SizedBox(width: 8),
         Text(

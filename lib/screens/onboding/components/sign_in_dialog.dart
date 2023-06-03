@@ -55,8 +55,8 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
                       ),
                     ),
                     const SignInForm(),
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Expanded(
                           child: Divider(),
                         ),

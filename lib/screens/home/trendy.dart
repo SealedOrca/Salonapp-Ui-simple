@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class TrendyCutsPage extends StatelessWidget {
@@ -6,9 +5,9 @@ class TrendyCutsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Trendy Cuts & Colors'),
+        title: const Text('Trendy Cuts & Colors'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Trendy Cuts & Colors Page'),
       ),
     );

@@ -5,9 +5,9 @@ class BeautyBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('The Beauty Bar'),
+        title: const Text('The Beauty Bar'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('The Beauty Bar Page'),
       ),
     );

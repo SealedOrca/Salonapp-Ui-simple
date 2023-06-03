@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class GroomingServicesPage extends StatelessWidget {
   const GroomingServicesPage({Key? key});
@@ -8,10 +7,10 @@ class GroomingServicesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Grooming Services'),
+        title: const Text('Grooming Services'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: const Padding(
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,19 +31,22 @@ class GroomingServicesPage extends StatelessWidget {
             SizedBox(height: 20),
             BarberShopCard(
               title: 'Beard Trim & Grooming',
-              description: 'Expert beard trims and grooming services to keep you looking sharp.',
+              description:
+                  'Expert beard trims and grooming services to keep you looking sharp.',
               icon: Icons.face,
             ),
             SizedBox(height: 20),
             BarberShopCard(
               title: 'Hot Towel Shave',
-              description: 'Relaxing and rejuvenating hot towel shaves for the ultimate grooming experience.',
+              description:
+                  'Relaxing and rejuvenating hot towel shaves for the ultimate grooming experience.',
               icon: Icons.spa,
             ),
             SizedBox(height: 20),
             BarberShopCard(
               title: 'Facial Treatments',
-              description: 'Specialized facial treatments to cleanse, nourish, and revitalize your skin.',
+              description:
+                  'Specialized facial treatments to cleanse, nourish, and revitalize your skin.',
               icon: Icons.face_retouching_natural,
             ),
             // Add more barber shop cards here...
@@ -76,18 +78,18 @@ class BarberShopCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(icon, size: 48),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               description,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

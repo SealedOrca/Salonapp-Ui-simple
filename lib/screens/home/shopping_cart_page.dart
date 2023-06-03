@@ -67,7 +67,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping Cart'),
+        title: const Text('Shopping Cart'),
       ),
       body: Column(
         children: [
@@ -88,16 +88,16 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.remove),
+                        icon: const Icon(Icons.remove),
                         onPressed: () => decrementQuantity(index),
                       ),
                       Text(item.quantity.toString()),
                       IconButton(
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                         onPressed: () => incrementQuantity(index),
                       ),
                       IconButton(
-                        icon: Icon(Icons.delete),
+                        icon: const Icon(Icons.delete),
                         onPressed: () => removeItem(index),
                       ),
                     ],
@@ -110,7 +110,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Total: \$${calculateTotalPrice().toStringAsFixed(2)}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -120,7 +120,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
             onPressed: () {
               // Implement the checkout functionality here
             },
-            child: Text('Checkout'),
+            child: const Text('Checkout'),
           ),
         ],
       ),
